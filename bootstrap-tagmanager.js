@@ -157,14 +157,18 @@
          var tlid = obj.data("tlid");
 
          var p = jQuery.inArray(tagId, tlid)
-         
-         // console.log("TagIdToRemove: " + tagId);
-         // console.log("position: " + p);
 
          if (-1 != p) {
+            // perform callbacks
+            if ( tagManagerOptions.onDelete !== undefined ) {
+               var tag = tlis[p];
+               tagManagerOptions.onDelete(tag);
+            }
+
             jQuery("#"+objName+"_"+ tagId).remove();
             tlis.splice(p, 1);
             tlid.splice(p, 1);
+
             refreshHiddenTagList();
             // console.log(tlis);
          }
