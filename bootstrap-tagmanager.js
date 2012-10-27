@@ -398,14 +398,14 @@
                var pta = tagManagerOptions.prefilled;
                jQuery.each(pta, function (key, val) {
                   var a = 1;
-                  pushTag(val, obj);
+                  pushTag(val);
                });
             } else if (typeof (tagManagerOptions.prefilled) == "string") {
                var pta = tagManagerOptions.prefilled.split(',');
 
                jQuery.each(pta, function (key, val) {
                   var a = 1;
-                  pushTag(val, obj);
+                  pushTag(val);
                });
 
             }
